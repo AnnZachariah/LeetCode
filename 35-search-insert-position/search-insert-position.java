@@ -1,12 +1,22 @@
-import java.util.*;
 class Solution {
     public int searchInsert(int[] nums, int target) {
-        int result = Arrays.binarySearch(nums, target);
-        if(result>=0){
-            return result;
+        int low = 0;
+        int high = nums.length - 1;
+        int mid;
+
+        while(low<=high){
+            mid = low+(high-low)/2;
+
+            if(nums[mid] == target){
+                return mid;
+            }
+            else if(nums[mid]<=target){
+                low = mid + 1;
+            }
+            else{
+                high = mid - 1;
+            }
         }
-        else{
-            return -result-1;
-        }
+        return low;
     }
 }
