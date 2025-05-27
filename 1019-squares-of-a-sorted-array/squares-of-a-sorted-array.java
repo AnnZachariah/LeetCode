@@ -2,7 +2,7 @@ class Solution {
     public int[] sortedSquares(int[] nums) {
         int[] squared = new int[nums.length];
         for(int i = 0;i<nums.length;i++){
-            squared[i] = (int)Math.pow(nums[i],2);
+            squared[i] = nums[i]*nums[i];
         }
         Arrays.sort(squared);
         return squared;
