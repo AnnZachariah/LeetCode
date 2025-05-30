@@ -1,15 +1,10 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        int sum = 0;
-        int actual=0, expected=0;
         int n = nums.length;
-        
-        for(int i : nums){
-            sum+=i;
+        int sum = (n*(n+1))/2;
+        for(int i = 0; i<nums.length;i++){
+            sum = sum - nums[i];
         }
-        expected = (n*(n+1))/2;
-
-        return expected - sum;
-
+        return sum;
     }
 }
