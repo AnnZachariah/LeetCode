@@ -5,10 +5,13 @@ class Solution {
                 digits[i] = digits[i]+1;
                 return digits;
             }
-            digits[i] = 0;
+            else{
+                digits[i] = 0;
+            }
         }
-        int[] newnumber = new int[digits.length+1];
-        newnumber[0] = 1;
-        return newnumber;
+
+        int[] new_array = new int[digits.length+1];
+        new_array[0] = 1;
+        return new_array;
     }
 }
